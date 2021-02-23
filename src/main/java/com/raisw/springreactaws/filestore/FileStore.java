@@ -52,7 +52,7 @@ public class FileStore {
         try {
             return IOUtils.toByteArray(s3.getObject(path, key).getObjectContent());
         } catch (AmazonServiceException | IOException e) {
-            throw new AppException(FAILED_TO_DOWNLOAD_IMAGE, e.getCause().toString());
+            throw new AppException(FAILED_TO_DOWNLOAD_IMAGE,e.getLocalizedMessage());
         }
     }
 }
